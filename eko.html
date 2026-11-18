@@ -1,0 +1,1814 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<audio id="musica" autoplay loop muted>
+  <source src="cancion navidad.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+// Cuando el usuario hace click en la página, el sonido se activa
+document.addEventListener('click', function() {
+  const audio = document.getElementById('musica');
+  audio.muted = false;
+  audio.play();
+}, { once: true });
+</script>
+
+
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EKO-GREEN | Movilidad Eléctrica</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; font-family:'Roboto',sans-serif; }
+    html, body { width:100%; height:100%; overflow-x:hidden; background:white; color:#222; }
+
+    /* Animación */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    header { text-align:center; padding:2rem 1rem; }
+    header img { width:150px; margin-bottom:1rem; }
+    header h1 { font-size:3rem; color:#009966; text-shadow:0 0 3px rgba(0,255,153,0.3); margin-bottom:0.5rem; }
+    header p { font-size:1.3rem; color:#555; }
+
+    .products { 
+      display:grid; 
+      grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); 
+      gap:2rem; 
+      padding:3rem 2rem; 
+      max-width:1200px; 
+      margin:0 auto; 
+    }
+
+    .product-card { 
+      background:#fafafa; 
+      border-radius:1rem; 
+      text-align:center; 
+      padding:1rem; 
+      transition: transform 0.3s, box-shadow 0.3s; 
+      border:1px solid #ddd; 
+    }
+
+    .product-card:hover { transform: scale(1.03); box-shadow:0 0 8px rgba(0,255,153,0.3); }
+    .product-card img { width:100%; border-radius:0.5rem; transition: transform 0.5s; }
+    .product-card:hover img { transform: scale(1.05); }
+    .product-card h3 { color:#009966; margin:0.5rem 0; }
+    .product-card p { color:#444; font-size:0.9rem; margin-bottom:0.5rem; }
+    .product-card .price { color:#009966; font-weight:bold; margin-bottom:1rem; font-size:1.1rem; }
+    .product-card .km { color:#009966; font-weight:bold; font-size:1rem; margin-bottom:0.5rem; }
+
+    .product-card button { 
+      padding:0.8rem 2rem; 
+      background:#00b377; 
+      color:#fff; 
+      border:none; 
+      border-radius:50px; 
+      cursor:pointer; 
+      font-weight:bold; 
+      box-shadow:0 0 6px rgba(0,255,153,0.3);
+      transition:0.3s; 
+    }
+    .product-card button:hover { background:#009966; box-shadow:0 0 8px rgba(0,255,153,0.4); }
+
+    footer { 
+      text-align:center; 
+      padding:0.5rem 1rem; 
+      background:#f5f5f5; 
+      width:100%; 
+      position:fixed; 
+      bottom:0; 
+      left:0; 
+      border-top:1px solid #ccc;
+    }
+    footer p { font-size:0.75rem; color:#009966; }
+
+  </style>
+</head>
+
+
+
+
+
+<style>
+/* Asegura que la sección mida toda la pantalla real en móviles */
+.full-mobile-height {
+    height: 100vh;
+    height: 100dvh; /* Soluciona Safari y Chrome en móviles */
+}
+</style>
+
+
+
+<body>
+
+  <!-- SECCIÓN HERO CON VIDEO -->
+  <section class="relative w-full h-screen overflow-hidden flex items-center justify-center text-center full-mobile-height">
+    <!-- Video de fondo -->
+    <video autoplay loop muted playsinline preload="auto"
+      class="absolute inset-0 w-full h-full object-cover">
+      <source src="bik5q2-h264-hd.mp4" type="video/mp4">
+      Tu navegador no soporta el video HTML5.
+    </video>
+
+    <!-- Capa blanca translúcida -->
+    <div class="absolute inset-0 bg-white bg-opacity-20"></div>
+
+    <!-- Contenido sobre el video -->
+    <div class="relative z-10 px-6 animate-fadeInUp" style="animation: fadeInUp 1s ease forwards;">
+
+
+      <h1 class="text-5xl md:text-7xl font-bold mb-4 text-green-100 drop-shadow-lg">EKO-GREEN</h1>
+      <p class="text-lg md:text-2xl mb-8 text-gray-800 text-green-100">
+        Movilidad eléctrica que impulsa un futuro más verde
+      </p>
+
+
+
+     <div class="product-card">
+        <div class="km">
+          <h2>Kilómetros recorridos por</h2>
+          <h1>EKO-GREEN: <span class="km-counter">0</span> km ⚡</h1>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+
+<script>
+document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+});
+
+document.addEventListener('keydown', function(e) {
+    if (
+        e.key === 'F12' ||
+        (e.ctrlKey && e.shiftKey && ['I','J','C'].includes(e.key)) ||
+        (e.ctrlKey && e.key.toLowerCase() === 'u')
+    ) {
+        e.preventDefault();
+    }
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+
+
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EKO-GREEN | Movilidad eléctrica</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    /* Animación suave de aparición */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+
+<head>
+<meta charset="UTF-8">
+<title>Texto + Imagen</title>
+<style>
+  .fila {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    padding: 50px;
+    font-family: Arial;
+  }
+  img {
+    width: 300px;
+  }
+</style>
+</head>
+<body>
+
+<div class="">
+    <div>
+
+
+
+
+
+
+
+
+        
+<style>
+  /* EKO-GREEN | Diseño adaptable */
+  .eko-document {
+    --eko-green: #168447;
+    --eko-dark: #14251b;
+    --eko-text: #303a33;
+    --eko-light: #f3f8f4;
+
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: clamp(16px, 4vw, 44px);
+    box-sizing: border-box;
+    color: var(--eko-text);
+    background: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
+    overflow-wrap: break-word;
+  }
+
+  .eko-document *,
+  .eko-document *::before,
+  .eko-document *::after {
+    box-sizing: border-box;
+  }
+
+  .eko-document h1,
+  .eko-document h2,
+  .eko-document h3,
+  .eko-document p {
+    margin-top: 0;
+  }
+
+  .eko-document h1 {
+    color: var(--eko-dark);
+    font-size: clamp(25px, 4vw, 38px);
+    line-height: 1.25;
+    text-align: center;
+    margin-bottom: 12px;
+  }
+
+  .eko-document h2 {
+    color: var(--eko-green);
+    font-size: clamp(21px, 3vw, 29px);
+    line-height: 1.35;
+    margin-bottom: 20px;
+  }
+
+  .eko-document h3 {
+    color: var(--eko-dark);
+    font-size: clamp(16px, 2vw, 19px);
+    line-height: 1.45;
+    margin-bottom: 8px;
+  }
+
+  .eko-document p {
+    margin-bottom: 18px;
+  }
+
+  .eko-document .eko-cover {
+    padding: clamp(24px, 5vw, 48px) 0;
+    text-align: center;
+    border-bottom: 3px solid var(--eko-green);
+    margin-bottom: 30px;
+  }
+
+  .eko-document .eko-brand {
+    color: var(--eko-green);
+    font-size: clamp(30px, 6vw, 48px);
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+  }
+
+  .eko-document .eko-tagline {
+    color: #657168;
+    font-size: clamp(14px, 2vw, 17px);
+    margin-bottom: 0;
+  }
+
+  .eko-document .eko-intro {
+    font-size: clamp(15px, 2vw, 17px);
+  }
+
+  .eko-document .eko-benefits {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    margin: 26px 0;
+  }
+
+  .eko-document .eko-card {
+    min-width: 0;
+    padding: 20px;
+    background: var(--eko-light);
+    border: 1px solid #e0ebe2;
+    border-top: 4px solid var(--eko-green);
+    border-radius: 10px;
+  }
+
+  .eko-document .eko-card p {
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 0;
+  }
+
+  .eko-document .eko-section {
+    padding: clamp(22px, 4vw, 36px) 0;
+  }
+
+  .eko-document .eko-guarantee {
+    margin-top: 18px;
+    padding: clamp(20px, 4vw, 36px);
+    background: #f7faf7;
+    border: 1px solid #dce9de;
+    border-radius: 12px;
+  }
+
+  .eko-document .eko-guarantee-title {
+    text-align: center;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #dce9de;
+    margin-bottom: 24px;
+  }
+
+  .eko-document .eko-seal {
+    display: inline-block;
+    color: var(--eko-green);
+    border: 2px solid var(--eko-green);
+    border-radius: 30px;
+    padding: 8px 18px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 18px;
+  }
+
+  .eko-document .eko-promise {
+    background: var(--eko-dark);
+    color: #ffffff;
+    padding: 24px;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 26px;
+  }
+
+  .eko-document .eko-promise p {
+    margin-bottom: 0;
+  }
+
+  .eko-document .eko-promise strong {
+    color: #8ee0a8;
+  }
+
+  .eko-document .eko-footer {
+    text-align: center;
+    padding-top: 28px;
+    margin-top: 28px;
+    border-top: 1px solid #dce9de;
+  }
+
+  .eko-document .eko-footer strong {
+    color: var(--eko-green);
+    font-size: 20px;
+    letter-spacing: 1px;
+  }
+
+  /* Tablets */
+  @media (max-width: 760px) {
+    .eko-document .eko-benefits {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    .eko-document .eko-card {
+      padding: 18px;
+    }
+  }
+
+  /* Celulares */
+  @media (max-width: 480px) {
+    .eko-document {
+      padding: 16px;
+      font-size: 15px;
+      line-height: 1.75;
+    }
+
+    .eko-document .eko-cover {
+      padding: 24px 0;
+      margin-bottom: 20px;
+    }
+
+    .eko-document .eko-brand {
+      letter-spacing: 1px;
+    }
+
+    .eko-document .eko-guarantee {
+      padding: 16px;
+    }
+
+    .eko-document .eko-promise {
+      padding: 20px 16px;
+    }
+
+    .eko-document .eko-section {
+      padding: 20px 0;
+    }
+  }
+
+  /* Impresión y guardado en PDF */
+  @media print {
+    .eko-document {
+      max-width: none;
+      padding: 10mm;
+      font-size: 11pt;
+      line-height: 1.6;
+    }
+
+    .eko-document .eko-benefits {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .eko-document .eko-card,
+    .eko-document .eko-guarantee,
+    .eko-document .eko-promise {
+      break-inside: avoid;
+      print-color-adjust: exact;
+      -webkit-print-color-adjust: exact;
+    }
+  }
+</style>
+
+<div class="eko-document">
+
+  <!-- PORTADA DE BIENVENIDA -->
+  <header class="eko-cover">
+    <h1>Bienvenido a la movilidad del futuro</h1>
+    <div class="eko-brand">EKO-GREEN</div>
+    <p class="eko-tagline">
+      Movilidad eléctrica que impulsa un futuro más verde
+    </p>
+  </header>
+
+  <!-- MENSAJE DE BIENVENIDA -->
+  <section class="eko-section">
+    <p class="eko-intro">
+      En <strong>EKO-GREEN</strong> trabajamos cada día con un propósito:
+      ofrecerte tecnología, ahorro y una experiencia de conducción
+      que contribuya a cuidar tu economía y el medio ambiente.
+      Nuestras motos eléctricas están diseñadas para acompañarte en
+      tus actividades con una movilidad silenciosa y económica.
+    </p>
+
+    <h2>Tu compra cuenta con nuestro respaldo</h2>
+
+    <p>
+      Como parte de nuestra comunidad, queremos acompañarte para que
+      disfrutes de tu vehículo y aproveches al máximo sus beneficios.
+    </p>
+
+    <div class="eko-benefits">
+
+      <article class="eko-card">
+        <h3>🛠️ Soporte técnico especializado</h3>
+        <p>
+          Te orientamos en mantenimiento, consultas y recomendaciones
+          para el cuidado y uso adecuado de tu moto eléctrica.
+        </p>
+      </article>
+
+      <article class="eko-card">
+        <h3>🛡️ Garantía certificada EKO-GREEN</h3>
+        <p>
+          Tu vehículo cuenta con 1 año de garantía certificada, respaldada 
+          por nuestro certificado oficial y sujeta a las condiciones establecidas en el mismo.
+         ¡Compra con confianza y el respaldo de EKO-GREEN!
+        </p>
+      </article>
+
+      <article class="eko-card">
+        <h3>🔋 Acompañamiento y orientación</h3>
+        <p>
+          Te asesoramos sobre la carga correcta de la batería,
+          los cuidados diarios y las buenas prácticas para
+          contribuir a prolongar la vida útil de tu vehículo.
+        </p>
+      </article>
+
+    </div>
+
+    <p>
+      Queremos que tu nueva moto eléctrica te brinde una excelente
+      experiencia y te ayude a optimizar tus gastos de movilidad.
+    </p>
+
+    <p>
+      Gracias por confiar en nosotros y formar parte de nuestro
+      compromiso con un futuro más limpio.
+    </p>
+
+    
+  </section>
+
+  <!-- SECCIÓN DE GARANTÍA -->
+  <section class="eko-section">
+    <div class="eko-guarantee">
+
+      <div class="eko-guarantee-title">
+        <div class="eko-seal">RESPALDO Y CONFIANZA</div>
+        <h2>Certificado Oficial de Garantía EKO-GREEN</h2>
+        <p>
+          Un compromiso con la calidad, la confianza y la atención
+          a nuestros clientes.
+        </p>
+      </div>
+
+      <p>
+        En <strong>EKO-GREEN</strong> no solo vendemos motos eléctricas:
+        construimos relaciones de confianza con nuestros clientes.
+        Por eso, cada unidad cuenta con una garantía conforme a las
+        condiciones indicadas en su certificado.
+      </p>
+
+      <p>
+        Sabemos que adquirir una moto eléctrica representa una inversión
+        importante para tu trabajo, tu negocio y tu futuro. Nuestro
+        compromiso no termina el día de la entrega: queremos seguir
+        acompañándote durante el uso de tu vehículo.
+      </p>
+
+      <p>
+        La garantía brinda cobertura frente a los defectos de fabricación
+        y las fallas que correspondan según sus términos, condiciones,
+        exclusiones y período de vigencia.
+      </p>
+
+      <p>
+        Al elegir <strong>EKO-GREEN</strong>, eliges una empresa
+        comprometida con brindarte orientación y atención posventa.
+        Nuestro objetivo es que conduzcas con confianza y sepas
+        cómo cuidar tu vehículo para disfrutar de sus beneficios.
+      </p>
+
+      <p>
+        Recuerda conservar tu certificado y cumplir las indicaciones
+        de uso y mantenimiento establecidas para tu modelo.
+      </p>
+    </div>
+  </section>
+
+</div>
+
+
+
+
+
+
+
+
+
+<section class="eko-gallery" aria-label="Galería de vehículos EKO-GREEN">
+  
+
+  <div class="eko-slider" id="ekoSlider">
+    <div class="eko-track" id="ekoTrack">
+      <button class="eko-slide is-active" type="button" aria-label="Ver imagen 4">
+        <img src="Imagen 4.png" alt="Vehículo eléctrico EKO-GREEN 1">
+        <span class="eko-slide-label">EKO-GREEN</span>
+      </button>
+
+      <button class="eko-slide" type="button" aria-label="Ver imagen 2">
+        <img src="Imagen 2.png" alt="Vehículo eléctrico EKO-GREEN 2" loading="lazy">
+        <span class="eko-slide-label">EKO-GREEN</span>
+      </button>
+
+      <button class="eko-slide" type="button" aria-label="Ver imagen 3">
+        <img src="Imagen 3.jpg" alt="Vehículo eléctrico EKO-GREEN 3" loading="lazy">
+        <span class="eko-slide-label">EKO-GREEN</span>
+      </button>
+
+      <button class="eko-slide" type="button" aria-label="Ver imagen 1">
+        <img src="Imagen 1.jpg" alt="Vehículo eléctrico EKO-GREEN 4" loading="lazy">
+        <span class="eko-slide-label">EKO-GREEN</span>
+      </button>
+
+      <button class="eko-slide" type="button" aria-label="Ver imagen 5">
+        <img src="Imagen 5.jpg" alt="Vehículo eléctrico EKO-GREEN 5" loading="lazy">
+        <span class="eko-slide-label">EKO-GREEN</span>
+      </button>
+
+      <button class="eko-slide" type="button" aria-label="Ver imagen 6">
+        <img src="Imagen 6.jpg" alt="Vehículo eléctrico EKO-GREEN 6" loading="lazy">
+        <span class="eko-slide-label">EKO-GREEN</span>
+      </button>
+
+<button class="eko-slide" type="button" aria-label="Ver imagen 7">
+        <img src="Imagen 7.jpg" alt="Vehículo eléctrico EKO-GREEN 7" loading="lazy">
+        <span class="eko-slide-label">EKO-GREEN</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="eko-gallery-controls">
+    <button type="button" id="ekoPrev" aria-label="Imagen anterior">←</button>
+    <button type="button" id="ekoPlay" aria-pressed="false">Ⅱ Pausar</button>
+    <button type="button" id="ekoNext" aria-label="Imagen siguiente">→</button>
+    <span id="ekoStatus" aria-live="polite">1 / 6</span>
+  </div>
+
+  <div class="eko-gallery-progress" aria-hidden="true">
+    <span id="ekoProgress"></span>
+  </div>
+</section>
+
+<style>
+.eko-gallery {
+  --eko-green: #168447;
+  --eko-dark: #14251b;
+  --eko-muted: #68756c;
+
+  width: 100%;
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: clamp(14px, 4vw, 36px);
+  box-sizing: border-box;
+  background: #fff;
+  color: var(--eko-dark);
+  font-family: Arial, Helvetica, sans-serif;
+  overflow: hidden;
+}
+
+.eko-gallery *,
+.eko-gallery *::before,
+.eko-gallery *::after {
+  box-sizing: border-box;
+}
+
+.eko-gallery-header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 22px;
+}
+
+.eko-gallery-header p {
+  margin: 0;
+  color: var(--eko-muted);
+  font-size: clamp(14px, 2vw, 17px);
+  line-height: 1.6;
+}
+
+.eko-slider {
+  width: 100%;
+  overflow: hidden;
+  padding: 16px 0;
+  touch-action: pan-y;
+}
+
+.eko-track {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  transition: transform .45s ease;
+  will-change: transform;
+}
+
+.eko-slide {
+  position: relative;
+  flex: 0 0 76%;
+  min-width: 0;
+  aspect-ratio: 16 / 10;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid #dfe8e0;
+  border-radius: 13px;
+  background: #f3f6f3;
+  cursor: pointer;
+  opacity: .72;
+  transform: scale(.95);
+  transition: opacity .35s ease, transform .35s ease;
+}
+
+.eko-slide.is-active {
+  opacity: 1;
+  transform: scale(1);
+  border-color: #b9dcc4;
+  box-shadow: 0 10px 28px rgba(20, 37, 27, .14);
+}
+
+.eko-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.eko-slide-label {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  padding: 7px 11px;
+  border-radius: 5px;
+  color: #fff;
+  background: rgba(16, 27, 20, .84);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  pointer-events: none;
+}
+
+.eko-gallery-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.eko-gallery-controls button {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 9px 15px;
+  border: 1px solid #dce5dd;
+  border-radius: 30px;
+  background: #fff;
+  color: var(--eko-dark);
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background .2s ease, color .2s ease;
+}
+
+.eko-gallery-controls button:hover {
+  background: var(--eko-green);
+  color: #fff;
+}
+
+.eko-gallery-controls button:focus-visible {
+  outline: 3px solid var(--eko-green);
+  outline-offset: 3px;
+}
+
+#ekoStatus {
+  margin-left: 5px;
+  color: var(--eko-muted);
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+}
+
+.eko-gallery-progress {
+  width: 100%;
+  height: 4px;
+  margin-top: 20px;
+  overflow: hidden;
+  border-radius: 5px;
+  background: #e8eee9;
+}
+
+#ekoProgress {
+  display: block;
+  width: 0;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--eko-green);
+}
+
+@media (min-width: 700px) {
+  .eko-slide {
+    flex-basis: 66%;
+  }
+
+  .eko-track {
+    gap: 26px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .eko-slide {
+    flex-basis: 60%;
+  }
+}
+
+@media (max-width: 480px) {
+  .eko-gallery {
+    margin: 20px auto;
+    padding: 18px 12px;
+  }
+
+  .eko-gallery-header {
+    margin-bottom: 10px;
+  }
+
+  .eko-slider {
+    padding: 12px 0;
+  }
+
+  .eko-track {
+    gap: 12px;
+  }
+
+  .eko-slide {
+    flex-basis: 88%;
+    aspect-ratio: 4 / 3;
+    border-radius: 10px;
+  }
+
+  .eko-gallery-controls {
+    gap: 7px;
+  }
+
+  .eko-gallery-controls button {
+    padding: 8px 12px;
+  }
+
+  #ekoStatus {
+    flex-basis: 100%;
+    margin: 3px 0;
+    text-align: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .eko-track,
+  .eko-slide {
+    transition: none;
+  }
+}
+</style>
+
+<script>
+(function () {
+  function initEkoGallery() {
+    const gallery = document.querySelector('.eko-gallery');
+
+    if (!gallery || gallery.dataset.initialized === 'true') return;
+
+    const slider = gallery.querySelector('#ekoSlider');
+    const track = gallery.querySelector('#ekoTrack');
+    const slides = Array.from(track.querySelectorAll('.eko-slide'));
+    const prev = gallery.querySelector('#ekoPrev');
+    const next = gallery.querySelector('#ekoNext');
+    const play = gallery.querySelector('#ekoPlay');
+    const status = gallery.querySelector('#ekoStatus');
+    const progress = gallery.querySelector('#ekoProgress');
+
+    if (!slider || !slides.length || !prev || !next || !play ||
+        !status || !progress) return;
+
+    gallery.dataset.initialized = 'true';
+
+    let current = 0;
+    let timer = null;
+    let animationFrame = null;
+    let paused = false;
+    let hovered = false;
+    let touchStartX = 0;
+    let startedAt = 0;
+
+    // Duración de cada imagen: 2500 milisegundos = 1,5 segundos.
+    const delay = 1500;
+    const reducedMotion = window.matchMedia(
+      '(prefers-reduced-motion: reduce)'
+    );
+
+    function centerSlide(index) {
+      const slide = slides[index];
+      if (!slide) return;
+
+      const slideCenter = slide.offsetLeft + slide.offsetWidth / 2;
+      const target = slideCenter - slider.clientWidth / 2;
+      const maxTarget = Math.max(0, track.scrollWidth - slider.clientWidth);
+      const position = Math.min(maxTarget, Math.max(0, target));
+
+      track.style.transform =
+        'translate3d(' + (-position) + 'px, 0, 0)';
+    }
+
+    function update(index) {
+      current = (index + slides.length) % slides.length;
+
+      slides.forEach(function (slide, i) {
+        slide.classList.toggle('is-active', i === current);
+        slide.setAttribute(
+          'aria-current',
+          i === current ? 'true' : 'false'
+        );
+      });
+
+      status.textContent = (current + 1) + ' / ' + slides.length;
+      centerSlide(current);
+    }
+
+    function stop() {
+      if (timer !== null) {
+        clearTimeout(timer);
+        timer = null;
+      }
+
+      if (animationFrame !== null) {
+        cancelAnimationFrame(animationFrame);
+        animationFrame = null;
+      }
+    }
+
+    function refreshButton() {
+      play.textContent = paused ? '▶ Reproducir' : 'Ⅱ Pausar';
+      play.setAttribute('aria-pressed', String(paused));
+      play.setAttribute(
+        'aria-label',
+        paused ? 'Reanudar reproducción' : 'Pausar reproducción'
+      );
+    }
+
+    function schedule() {
+      stop();
+      progress.style.width = '0%';
+
+      if (
+        paused ||
+        hovered ||
+        document.hidden ||
+        reducedMotion.matches ||
+        slides.length < 2
+      ) {
+        return;
+      }
+
+      startedAt = performance.now();
+
+      function animate(now) {
+        if (paused || hovered || document.hidden || reducedMotion.matches) {
+          animationFrame = null;
+          return;
+        }
+
+        const elapsed = now - startedAt;
+        const percent = Math.min(100, (elapsed / delay) * 100);
+
+        progress.style.width = percent + '%';
+
+        if (elapsed >= delay) {
+          stop();
+          update(current + 1);
+          schedule();
+          return;
+        }
+
+        animationFrame = requestAnimationFrame(animate);
+      }
+
+      animationFrame = requestAnimationFrame(animate);
+
+      // Único temporizador para avanzar la imagen.
+      timer = setTimeout(function () {
+        stop();
+        update(current + 1);
+        schedule();
+      }, delay);
+    }
+
+    prev.addEventListener('click', function () {
+      update(current - 1);
+      schedule();
+    });
+
+    next.addEventListener('click', function () {
+      update(current + 1);
+      schedule();
+    });
+
+    play.addEventListener('click', function () {
+      paused = !paused;
+      refreshButton();
+      schedule();
+    });
+
+    slides.forEach(function (slide, index) {
+      slide.addEventListener('click', function () {
+        update(index);
+        schedule();
+      });
+    });
+
+    gallery.addEventListener('mouseenter', function () {
+      hovered = true;
+      stop();
+    });
+
+    gallery.addEventListener('mouseleave', function () {
+      hovered = false;
+      schedule();
+    });
+
+    slider.addEventListener('touchstart', function (event) {
+      touchStartX = event.changedTouches[0].clientX;
+    }, { passive: true });
+
+    slider.addEventListener('touchend', function (event) {
+      const difference =
+        event.changedTouches[0].clientX - touchStartX;
+
+      if (Math.abs(difference) > 45) {
+        update(current + (difference < 0 ? 1 : -1));
+        schedule();
+      }
+    }, { passive: true });
+
+    window.addEventListener('resize', function () {
+      centerSlide(current);
+    });
+
+    document.addEventListener('visibilitychange', function () {
+      schedule();
+    });
+
+    if (reducedMotion.addEventListener) {
+      reducedMotion.addEventListener('change', function () {
+        schedule();
+      });
+    }
+
+    update(0);
+    refreshButton();
+    schedule();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initEkoGallery);
+  } else {
+    initEkoGallery();
+  }
+})();
+</script>
+
+<section class="products">
+
+
+
+  <div class="product-card">
+    
+<img src="mototaxi22.1.png" alt="Trimoto Electrico - Carguero con Techo">
+    <h3><b>Trimoto Electrico - Carguero con Techo</b></h3>
+    <p>Compacta, eficiente y lista para tu emprendimiento</p>
+    <div class="price">S/ 8,250</div>
+   
+<p>✅ Potencia motor (Watts Nominal) 2000W Potencia Motor (Watts Máximo) 2800W</p>
+<p>✅ Placa y Tarjeta de Propiedad.</p> 
+<p>✅ Bateria Tecnologia super Grafeno Acido ⚡.</p> 
+<p>✅ Pantalla digital LCD.</p> 
+<p>✅ Suspensión delantera y trasera / Telescópica doble amortiguador.</p> 
+<p>✅ Freno delantero de Disco.</p>
+<p>✅ Tiempo de carga de 5 a 6 hrs aprox.</p> 
+<p>✅ Autonomía de 70 a 80 km .</p>
+<p>✅ Carga máxima 800 Kg</p>
+<p>✅ Aro 12.</p>
+<p>✅ Controlador de 24 tubos.</p>
+<p>✅ Rooster.</p>
+<p>✅ Medidas de tolta 160X110 CM.</p>
+<p>✅ Parlante Bluetooh.</p>
+
+ <a href="calculadora1.html">
+    <button>Calcula tu ahorro</button>
+</a>
+
+<p style="margin-bottom: 15px;"></p>
+<p></p>
+
+<a href="https://wa.me/51963058374?text=Hola,%20quiero%20más%20info%20de%20Trimoto%20 carguero con techo" target="_blank">
+      <button>Comparar</button>
+    </a>
+  </div>
+
+
+
+  <div class="product-card">
+    <img src="mototaxi23.png" alt="Trimoto Electrico Mini-Carguero con Techo">
+    <h3><b>Trimoto Electrico Mini-Carguero con Techo</b></h3>
+    <p>Compacta, eficiente y lista para tu emprendimiento</p>
+    <div class="price">S/ 6,550</div>
+   
+<p>✅ Potencia motor (Watts Nominal) 1500W Potencia Motor (Watts Máximo) 1750W</p>
+<p>✅ Placa y Tarjeta de Propiedad.</p> 
+<p>✅ Bateria Tecnologia super Grafeno Acido ⚡.</p> 
+<p>✅ Pantalla digital LCD.</p> 
+<p>✅ Freno de tambor.</p>
+<p>✅ Tiempo de carga de 5 a 6 hrs aprox.</p> 
+<p>✅ Autonomía de 50 a 60 km .</p>
+<p>✅ Carga máxima 400 Kg</p>
+<p>✅ Aro 12.</p>
+<p>✅ Rooster.</p>
+<p>✅ Medidas de tolta 110X90 CM.</p>
+
+
+
+ <a href="calculadora2.html">
+    <button>Calcula tu ahorro</button>
+</a>
+
+
+<p style="margin-bottom: 15px;"></p>
+<p></p>
+
+
+<a href="https://wa.me/51963058374?text=Hola,%20quiero%20más%20info%20de%20Trimoto%20mini carguero con techo" target="_blank">
+      <button>Comparar</button>
+    </a>
+  </div>
+
+
+
+<div class="product-card">
+    <img src="mototaxi24.png" alt="Trimoto Electrico Mini-Carguero">
+    <h3><b>Trimoto Electrico Mini-Carguero</b></h3>
+    <p>Compacta, eficiente y lista para tu emprendimiento</p>
+    <div class="price">S/ 5,850</div>
+   
+<p>✅ Potencia motor (Watts Nominal) 1500W Potencia Motor (Watts Máximo) 1750W</p>
+<p>✅ Placa y Tarjeta de Propiedad.</p> 
+<p>✅ Bateria Tecnologia super Grafeno Acido ⚡.</p> 
+<p>✅ Pantalla digital LCD.</p> 
+<p>✅ Freno de tambor.</p>
+<p>✅ Tiempo de carga de 5 a 6 hrs aprox.</p> 
+<p>✅ Autonomía de 50 a 60 km .</p>
+<p>✅ Carga máxima 400 Kg</p>
+<p>✅ Aro 10.</p>
+<p>✅ Rooster.</p>
+<p>✅Llanta delantera y trasera / sin cámara.</p>
+
+
+ <a href="calculadora3.html">
+    <button>Calcula tu ahorro</button>
+</a>
+
+
+
+<p style="margin-bottom: 15px;"></p>
+<p></p>
+
+
+
+<a href="https://wa.me/51963058374?text=Hola,%20quiero%20más%20info%20de%20Trimoto%20mini carguero" target="_blank">
+      <button>Comparar</button>
+    </a>
+  </div>
+
+
+
+
+  <div class="product-card">
+    <img src="mototaxi0.1.png" alt="Trimoto Electrico Familiar PREMIUM">
+<img src="mototaxi0.png" alt="Trimoto Electrico Familiar PREMIUM">
+    <h3><b>Trimoto Electrico Familiar PREMIUM</b></h3>
+    <p>Compacta, eficiente y lista para cualquier trayecto</p>
+    <div class="price">S/ 7,050</div>
+   
+<p>✅ Potencia motor (Watts Nominal) 1500W Potencia Motor (Watts Máximo) 2500W</p>
+<p>✅ Placa y Tarjeta de Propiedad.</p> 
+<p>✅ Bateria Tecnologia super Grafeno Acido ⚡.</p> 
+<p>✅ Pantalla digital LCD.</p> 
+<p>✅ Suspensión delantera y trasera / Telescópica doble amortiguador.</p> 
+<p>✅ Freno delantero de Disco.</p>
+<p>✅ Tiempo de carga de 5 a 6 hrs aprox.</p> 
+<p>✅ Autonomía de 60 a 70 km .</p>
+<p>✅ Carga máxima 300 Kg.</p>
+<p>✅ Camara de Retroseso.</p>
+<p>✅ Puerta / Tolva.</p>
+<p>✅ 3 Cambios de Fuerza.</p>
+<p>✅ Rooster.</p>
+<p>✅ Llanta delantera y trasera / sin cámara.</p>
+
+
+ <a href="calculadora4.html">
+    <button>Calcula tu ahorro</button>
+</a>
+
+
+
+<p style="margin-bottom: 15px;"></p>
+<p></p>
+
+
+<a href="https://wa.me/51963058374?text=Hola,%20quiero%20más%20info%20de%20Trimoto%20Familiar premium" target="_blank">
+      <button>Comparar</button>
+    </a>
+  </div>
+
+
+
+  <div class="product-card">
+    <img src="mototaxi20.1.png" alt="Trimoto Electrico Familiar">
+<img src="mototaxi20.png" alt="Trimoto Electrico Familiar">
+    <h3><b>Trimoto Electrico Familiar</b></h3>
+    <p>Compacta, eficiente y lista para cualquier trayecto</p>
+    <div class="price">S/ 6,050</div>
+   
+<p>✅ Potencia motor (Watts Nominal) 1500W Potencia Motor (Watts Máximo) 2500W</p>
+<p>✅ Placa y Tarjeta de Propiedad.</p> 
+<p>✅ Bateria Tecnologia super Grafeno Acido ⚡.</p> 
+<p>✅ Pantalla digital LCD.</p> 
+<p>✅ Suspensión delantera y trasera / Telescópica doble amortiguador.</p> 
+<p>✅ Freno delantero de Disco.</p>
+<p>✅ Tiempo de carga de 5 a 6 hrs aprox.</p> 
+<p>✅ Autonomía de 60 a 70 km .</p>
+<p>✅ Carga máxima 300 Kg.</p>
+<p>✅ Camara de Retroseso.</p>
+<p>✅ Puerta / Tolva.</p>
+<p>✅ 3 Cambios de Fuerza.</p>
+<p>✅ Rooster.</p>
+<p>✅ Llanta delantera y trasera / sin cámara.</p>
+
+
+ <a href="calculadora5.html">
+    <button>Calcula tu ahorro</button>
+</a>
+
+
+
+<p style="margin-bottom: 15px;"></p>
+<p></p>
+
+
+<a href="https://wa.me/51963058374?text=Hola,%20quiero%20más%20info%20de%20Trimoto%20LITIO" target="_blank">
+      <button>Comparar</button>
+    </a>
+  </div>
+
+
+
+<div class="product-card">
+    <img src="mototaxi21.png" alt="Trimoto Electrico Deportivo">
+<img src="mototaxi21.1.png" alt="Trimoto Electrico Deportivo">
+    <h3><b>Trimoto Electrico Deportivo</b></h3>
+    <p>Compacta, eficiente y lista para tu emprendimiento</p>
+    <div class="price">S/ 5,150</div>
+   
+<p>✅ Potencia motor (Watts Nominal) 2000W Potencia Motor (Watts Máximo) 2500W</p>
+<p>✅ Placa y Tarjeta de Propiedad.</p> 
+<p>✅ Bateria Tecnologia super Grafeno Acido ⚡.</p> 
+<p>✅ Pantalla digital LCD.</p> 
+<p>✅ Suspensión delantera y trasera / Telescópica doble amortiguador.</p> 
+<p>✅ Freno delantero de Disco delantero y trasero.</p>
+<p>✅ Tiempo de carga de 5 a 6 hrs aprox.</p> 
+<p>✅ Autonomía de 60 a 70 km .</p>
+<p>✅ Carga máxima 250 Kg.</p>
+<p>✅ Puerta / Tolva.</p>
+<p>✅ 3 Cambios de Fuerza.</p>
+<p>✅ Llanta delantera y trasera / sin cámara.</p>
+
+
+ <a href="calculadora6.html">
+    <button>Calcula tu ahorro</button>
+</a>
+
+
+<p style="margin-bottom: 15px;"></p>
+<p></p>
+
+
+
+
+<a href="https://wa.me/51963058374?text=Hola,%20quiero%20más%20info%20de%20Trimoto%20LITIO" target="_blank">
+      <button>Comparar</button>
+    </a>
+  </div>
+
+
+
+  <div class="product-card">
+    <img src="mototaxi1.png" alt="Trimoto Electrico Premium">
+<img src="mototaxi1.1.png" alt="Trimoto Electrico Premium">
+    <h3><b>Trimoto Electrico Premium</b></h3>
+    <p>Compacta, eficiente y lista para cualquier trayecto</p>
+    <div class="price">S/ 4,550</div>
+   
+<p>✅ Potencia motor (Watts Nominal) 1500W Potencia Motor (Watts Máximo) 1700W</p>
+<p>✅ Batería LITIO ⚡/ Extraíble de muchos mas ciclos de carga.</p> 
+<p>✅ Pantalla digital LCD.</p> 
+<p>✅ Suspensión delantera y trasera / Telescópica doble amortiguador.</p> 
+<p>✅ Freno delantero y trasero / Tambor y tambor.</p>
+<p>✅ Tiempo de carga de 4 a 5 hrs aprox.</p> 
+<p>✅ Autonomía de 50 a 60 km .</p>
+<p>✅ Carga máxima 210 Kg</p>
+<p>✅ Aro de 10, es más Alta para los terrenos complicados.</p>
+<p>✅Llanta delantera y trasera / sin cámara.</p>
+
+
+ <a href="calculadora7.html">
+    <button>Calcula tu ahorro</button>
+</a>
+
+
+
+<p style="margin-bottom: 15px;"></p>
+<p></p>
+
+
+<a href="https://wa.me/51963058374?text=Hola,%20quiero%20más%20info%20de%20Trimoto%20LITIO" target="_blank">
+      <button>Comparar</button>
+    </a>
+  </div>
+
+
+
+  <div class="product-card">
+    <img src="mototaxi2.png" alt="Trimoto Electrico JP-3">
+<img src="mototaxi2.1.png" alt="Trimoto Electrico JP-3">
+    <h3><b>Trimoto Eléctrico JP-3</b></h3>
+    <p>Compacta, eficiente y lista para cualquier trayecto</p>
+    <div class="price">S/ 3,850</div>
+ 
+    <p>✅ Potencia motor (Watts Nominal) 1500W Potencia Motor (Watts Máximo) 1700W</p>
+<p>✅ Conexión a Bluetooth</p>
+ <p>✅ Batería Tecnologia plomo grafeno </p> 
+<p>✅Pantalla digital LCD.</p> 
+<p>✅ Suspensión delantera y trasera / Telescópica doble amortiguador.</p> 
+<p>✅ Freno delantero y trasero / disco y tambor.</p>
+<p>✅ Tiempo de carga de 5 a 6 hrs aprox.</p>
+ <p>✅ Autonomía de 50 a 60 km .</p> 
+<p>✅ Carga máxima 200 Kg</p>
+ <p>✅ Aro de 10, es más Alta para los terrenos complicados.</p>
+<p>✅Llanta delantera y trasera / sin cámara.</p>
+<p>🚫 No requiere placa ni licencia</p>
+
+ <a href="calculadora8.html">
+    <button>Calcula tu ahorro</button>
+</a>
+
+
+
+<p style="margin-bottom: 15px;"></p>
+<p></p>
+
+
+
+    <a href="https://wa.me/51963058374?text=Hola,%20quiero%20comprar%20Trimoto%20JP-3" target="_blank">
+      <button>Comprar</button>
+    </a>
+  </div>
+
+  <div class="product-card">
+    <img src="mototaxi3.1.png" alt="Trimoto Eléctrico Family">
+<img src="mototaxi3.png" alt="Trimoto Eléctrico Family">
+    <h3><b>Trimoto Eléctrico Family</b></h3>
+    <p>Compacta, eficiente y lista para cualquier trayecto</p>
+    <div class="price">S/ 3,350</div>
+
+<p>✅ Potencia motor (Watts Nominal) 1200W Potencia Motor (Watts Máximo) 1500W</p> 
+<p>✅ Bateria Tecnologia plomo acido</p> 
+<p>✅ Pantalla digital LCD.</p> 
+<p>✅ Suspensión delantera y trasera / Telescópica doble amortiguador.</p> 
+<p>✅ Freno delantero y trasero / tambor y tambor.</p>
+<p>✅ Tiempo de carga de 5 a 6 hrs aprox.</p>
+<p>✅ Autonomia de 40 a 50 km</p> 
+<p>✅ Carga máxima 180 Kg</p>
+<p>✅ Aro de 10, es más Alta para los terrenos complicados.</p>
+<p>✅Llanta delantera y trasera / sin cámara.</p>
+ <p>🚫NO requiere placa ni licencia.</p> 
+
+
+ <a href="calculadora9.html">
+    <button>Calcula tu ahorro</button>
+</a>
+
+<p style="margin-bottom: 15px;"></p>
+<p></p>
+
+    <a href="https://wa.me/51963058374?text=Hola,%20quiero%20comprar%20Trimoto%20Family" target="_blank">
+      <button>Comprar</button>
+    </a>
+  </div>
+
+
+
+<div class="product-card">
+    <img src="mototaxi18.png" alt="Bicimoto electrica VMP Urban-Pro ">
+<img src="mototaxi18.1.png" alt="Bicimoto electrica VMP Urbano-Pro ">
+    <h3><b>Bicimoto electrica VMP Urban-Pro</b></h3>
+    <p>Compacta, eficiente y lista para cualquier trayecto</p>
+    <div class="price">S/ 2,850</div>
+
+   <p>✅ Potencia motor (Watts Nominal) 800W Potencia Motor (Watts Máximo) 1000W</p> 
+<p>✅ Bateria Tecnologia plomo acido</p>
+<p>✅Pantalla digital LCD.</p> 
+<p>✅ Alarma y Bloqueo automatico antirrobo.</p> 
+<p>✅ Suspensión delantera y trasera / Telescópica doble amortiguador.</p> 
+<p>✅ Freno delantero y trasero / tambor y tambor.</p>
+<p>✅ Tiempo de carga de 4 a 5 hrs aprox.</p>
+<p>✅ Autonomia de 50 a 60 km</p>
+<p>✅ Carga máxima 120 Kg</p>
+<p>✅ Aro de 10</p>
+<p>✅Llanta delantera y trasera / sin cámara.</p>
+<p>🚫NO requiere placa ni licencia.</p> 
+
+
+ <a href="calculadora10.html">
+    <button>Calcula tu ahorro</button>
+</a>
+
+<p style="margin-bottom: 15px;"></p>
+<p></p>
+
+    <a href="https://wa.me/51963058374?text=Hola,%20quiero%20comprar%20Bicimoto%20Urbano-Pro" target="_blank">
+      <button>Comprar</button>
+    </a>
+  </div>
+
+
+
+<div class="product-card">
+    <img src="mototaxi4.png" alt="Bicimoto electrica VMP Urban">
+<img src="mototaxi4.1.png" alt="Bicimoto electrica VMP Urban">
+    <h3><b>Bicimoto electrica VMP Urban</b> </h3>
+    <p>Compacta y perfectamente diseñada para la ciudad.</p>
+    <div class="price">S/ 2,450</div>
+ 
+    <p>✅  Potencia motor (Watts Nominal) 500W Potencia Motor (Watts Máximo) 800W</p>
+<p>✅ Tarjeta NFC</p>
+    <p>✅ Bateria Tecnologia plomo acido</p>
+<p>✅Pantalla digital LCD.</p> 
+<p>✅ Suspensión delantera y trasera / Telescópica doble amortiguador.</p> 
+<p>✅ Alarma y Bloqueo automatico antirrobo.</p> 
+<p>✅ Freno delantero y trasero / tambor y tambor.</p>
+<p>✅ Tiempo de carga de 4 a 5 hrs aprox.</p>
+<p>✅ Autonomia de 50 a 60 km</p>
+<p>✅ Carga máxima 90 Kg</p>
+<p>✅ Aro de 10</p>
+<p>✅Llanta delantera y trasera / sin cámara.</p>
+ <p>🚫NO requiere placa ni licencia.</p> 
+
+
+
+ <a href="calculadora11.html">
+    <button>Calcula tu ahorro</button>
+</a>
+<p style="margin-bottom: 15px;"></p>
+<p></p>
+
+    <a href="https://wa.me/51963058374?text=Hola,%20quiero%20comprar%20Bicimoto%20electrica VMP Urbano " target="_blank">
+      <button>Comprar</button>
+    </a>
+  </div>
+
+
+<div class="product-card">
+    <img src="mototaxi5.png" alt="Bicimoto Electrica VMP L1 PRO">
+<img src="mototaxi5.1.png" alt="Bicimoto Electrica VMP L1 PRO">
+    <h3><b>Bicimoto Electrica VMP L1 PRO</b> </h3>
+    <p>Compacta, ideal para ciudad</p>
+    <div class="price">S/ 1,850</div>
+
+    <p>✅ Motor: 500W nominal / 800W máximo</p>
+    <p>✅ Batería de plomo ácido</p> 
+    <p>✅Pantalla digital LCD.</p>
+    <p>✅ Freno delantero y trasero / tambor y tambor.</p>
+    <p>✅ Tiempo de carga de 5 a 6 hrs aprox.</p>
+    <p>✅ Autonomía: 50 km </p>
+    <p>✅ Carga máxima 130 Kg</p>
+<p>✅Llanta delantera y trasera / sin cámara.</p>
+    <p>🚫 No requiere placa ni licencia</p>
+
+
+
+ <a href="calculadora12.html">
+    <button>Calcula tu ahorro</button>
+</a>
+<p style="margin-bottom: 15px;"></p>
+<p></p>
+
+    <a href="https://wa.me/51963058374?text=Hola,%20quiero%20comprar%20Bicimoto%20Electrica" target="_blank">
+      <button>Comprar</button>
+    </a>
+  </div>
+
+   
+
+<div class="product-card">
+    <img src="mototaxi7.png" alt="Scooter Electrico PRO">
+    <h3><b>Scooter Electrico PRO</b></h3>
+    <p>Compacta, ideal para ciudad</p>
+    <div class="price">S/ 1,850</div>
+
+    <p>✅ Motor: 500W nominal / 750W máximo</p>
+    <p>✅ Batería de Litio</p> 
+    <p>✅ Pantalla digital LCD.</p>
+    <p>✅ Freno delantero y trasero / disco y disco.</p>
+    <p>✅ Tiempo de carga de 1 aprox.</p>
+    <p>✅ Autonomía: Graduable en su Aplicacion max 80 km </p>
+    <p>✅ Carga máxima 90 Kg</p>
+    <p>✅Llanta delantera y trasera / anti-pinchaso.</p>
+    <p>✅ Conexión a celular</p>
+    <p>🚫 No requiere placa ni licencia</p>
+
+</body>
+
+
+    <a href="https://wa.me/51963058374?text=Hola,%20quiero%20comprar%20Scooter Electrico PRO" target="_blank">
+      <button>Comprar</button>
+    </a>
+  </div>
+
+
+
+
+<div class="product-card">
+    <img src="mototaxi8.png" alt="Llanta para Bicimoto Electrica aro 2.50 - 10 sin camara">
+    <h3><b>Llanta para Bicimoto Electrica aro 2.50 - 10 sin camara</b></h3>
+    <p></p>
+    <div class="price">S/ 0.00 </div>
+
+<p>✅Nombre: Llanta 2.50 - R 10 para Vehiculo de Movilidad Personal</p>
+<p>✅Marca: Yuanxing</p>
+<p>✅Diametro Del Rin: 10"</p>
+<p>✅Estilo De Conducción En Moto: Calle</p>
+<p>✅Compatible con VMP eléctricos GREENLINE, EKO-GREEN Y GENÉRICOS</p>
+<p>✅Nuestros neumáticos están hechos de NYLON (generalmente utilizado en la fabricación de neumáticos de automóviles y aviones, con buen sellado, resistencia a la compresión y durabilidad).</p>
+<p>✅Tipo De Terreno Intermedio</p>
+<p>✅Tipo De Adherencia Mojado caucho</p>
+
+
+</body>
+
+
+    <a href="https://wa.me/51963058374?text=Hola,%20quiero%20comprar%20Llanta para Bicimoto Electrica aro 2.50 - 10 sin camara" target="_blank">
+      <button>Comprar</button>
+    </a>
+  </div>
+
+
+
+<div class="product-card">
+    <img src="mototaxi9.png" alt="Llanta para trimoto Electrica">
+    <h3><b>Llanta para trimoto Electrica</b></h3>
+    <p></p>
+    <div class="price">S/ 0.00</div>
+
+    <p>✅ Las llantas son hechas bajo estrictos estándares de calidad en sus laboratorios pues se verifica
+ la dureza, resistencia a la abrasión, velocidad y carga, entre otros aspectos importantes para ofrecer un producto de primera.
+Llanta esta hecha de Nylon aro 10 para trimoto de carga, trimoto de paseo, motot electrica o scooter.</p>
+   
+
+</body>
+
+
+    <a href="https://wa.me/51963058374?text=Hola,%20quiero%20comprar%20Llanta para trimoto Electrica" target="_blank">
+      <button>Comprar</button>
+    </a>
+  </div>
+
+
+
+
+<div class="product-card">
+    <img src="mototaxi10.png" alt="Controlador para trimoto y bicimoto">
+    <h3><b>Controlador para trimoto y bicimoto</b></h3>
+    <p></p>
+    <div class="price">S/ 0.00</div>
+
+    <p>✅ Motos, Trimotos y Bicimotos</p>
+
+
+</body>
+
+
+    <a href="https://wa.me/51963058374?text=Hola,%20quiero%20comprar%20Controlador para trimoto y bicimoto" target="_blank">
+      <button>Comprar</button>
+    </a>
+  </div>
+
+
+
+
+<div class="product-card">
+    <img src="mototaxi11.png" alt="Caragador">
+    <h3><b>Caragador</b></h3>
+    <p>Compacta, ideal para ciudad</p>
+    <div class="price">S/ 0.00</div>
+
+    <p>✅  plomo acido de 48v12ah</p>
+    
+
+
+</body>
+
+
+    <a href="https://wa.me/51963058374?text=Hola,%20quiero%20comprar%20Caragador" target="_blank">
+      <button>Comprar</button>
+    </a>
+  </div>
+
+
+
+<div class="product-card">
+    <img src="mototaxi12.png" alt="Cargador Litio ">
+    <h3><b>Cargador Litio </b></h3>
+    <p>Compacta, ideal para ciudad</p>
+    <div class="price">S/ 0.00</div>
+
+    <p>✅ litio 48v3a</p>
+
+
+
+</body>
+
+
+    <a href="https://wa.me/51963058374?text=Hola,%20quiero%20comprar%20Cargador Litio " target="_blank">
+      <button>Comprar</button>
+    </a>
+  </div>
+
+
+
+
+<div class="product-card">
+    <img src="mototaxi17.png" alt="bateria de 60v23ah plomo Grafeno para trimoto">
+    <h3><b>60v23ah Grafeno</b></h3>
+    <p>bateria de 60v23ah plomo Grafeno para trimoto</p>
+    <div class="price">S/ 0.00</div>
+
+    <p></p>
+    
+
+
+</body>
+
+
+    <a href="https://wa.me/51963058374?text=Hola,%20quiero%20comprar%20bateria de 60v23ah plomo Grafeno para trimoto" target="_blank">
+      <button>Comprar</button>
+    </a>
+  </div>
+
+
+
+
+
+<div class="product-card">
+    <img src="mototaxi13.png" alt="60v20ah plomo acido">
+<img src="mototaxi13.1.png" alt="Trimoto Family">
+    <h3><b>60v20ah plomo acido</b></h3>
+    <p>bateria de 60v20ah plomo acido para trimoto</p>
+    <div class="price">S/ 0.00</div>
+
+    <p></p>
+    
+
+
+</body>
+
+
+    <a href="https://wa.me/51963058374?text=Hola,%20quiero%20comprar%2060v20ah plomo acido" target="_blank">
+      <button>Comprar</button>
+    </a>
+  </div>
+
+
+
+
+
+
+<div class="product-card">
+    <img src="mototaxi14.png" alt="plomo acido para bicimoto de 48v12ah">
+    <img src="mototaxi14.1.png" alt="plomo acido para bicimoto de 48v12ah">
+    <h3><b>plomo acido para bicimoto de 48v12ah</b></h3>
+    <p>bateria de plomo acido para vicimoto de 48v12ah</p>
+    <div class="price">S/ 0.00</div>
+
+    <p></p>
+    
+
+
+</body>
+
+
+    <a href="https://wa.me/51963058374?text=Hola,%20quiero%20comprar%20plomo acido para bicimoto de 48v12ah" target="_blank">
+      <button>Comprar</button>
+    </a>
+  </div>
+
+
+
+
+
+
+<div class="product-card">
+    <img src="mototaxi15.png" alt="corta corriente">
+    <h3><b>corta corriente</b></h3>
+    <p>Automatico</p>
+    <div class="price">S/ 0.00</div>
+
+    <p>Interruptor automático corta corriente, sirve para cortar automáticamente la corriente cuando tu vehículo eléctrico este totalmente cargado y evitar sobrecargas eléctricas.</p>
+    
+
+
+</body>
+
+
+    <a href="https://wa.me/51963058374?text=Hola,%20quiero%20comprar%20corta corriente" target="_blank">
+      <button>Comprar</button>
+    </a>
+  </div>
+
+
+
+
+
+<div class="product-card">
+    <img src="mototaxi16.png" alt="Válvula">
+    <h3><b>Válvula</b></h3>
+    <p>Bicimoto, Trimoto y Motos</p>
+    <div class="price">S/ 0.00</div>
+
+    <p>Esto es una válvula de neumático sin cámara tipo PVR-70, comúnmente utilizada en motocicletas y scooters eléctricos. </p>
+    
+
+
+</body>
+
+
+    <a href="https://wa.me/51963058374?text=Hola,%20quiero%20comprar%20Válvula" target="_blank">
+      <button>Comprar</button>
+    </a>
+  </div>
+
+
+<div>
+
+
+<style>
+  #mapa {
+      width: 1100px;     /* ANCHO DEL MAPA */
+      height: 300px;    /* ALTURA IGUAL → CUADRADO */
+      border: 0;
+      border-radius: 3px; /* Opcional (bordes redondeados) */
+  }
+
+ 
+</style>
+
+
+<p><h2 style="text-align:;">                  </h2></p>
+
+<div class="contenedor-mapa">
+  
+  <iframe 
+    id="mapa"
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d514.29083528521!2d-72.69194974399062!3d-12.868570434652892!2m3!1f333.
+47999999999985!2f56.21950354884941!3f0!3m2!1i1024!2i768!4f35!3m3!1m2!1s0x91727d2ba1d9a1f1%3A0x5d99d5ace5a229de!2s
+EKO-GREEN%20%2F%20Veh%C3%ADculos%20El%C3%A9ctricos%20Quillabamba!5e1!3m2!1ses!2spe!4v1763524627552!5m2!1ses!2spe" 
+width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    
+  </iframe>
+
+</div>
+
+
+</section>
+
+<footer>
+  <p>2026 EKO-GREEN | Todos los derechos reservados.</p>
+</footer>
+
+<script>
+  // Contador de kilómetros
+  document.querySelectorAll('.km-counter').forEach(el=>{
+    let km = 0;
+    const maxKm = 350452 + Math.floor(Math.random()*150);
+    setInterval(()=>{
+      if(km < maxKm){
+        km += Math.floor(Math.random()*5);
+        if(km>maxKm) km=maxKm;
+        el.textContent = km;
+      }
+    },150);
+  });
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+

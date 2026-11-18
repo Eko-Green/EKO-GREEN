@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#090e0b">
+<title>EKO-GREEN | Calculadora de ahorro</title>
+
+
+
+<script>
+document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+});
+
+document.addEventListener('keydown', function(e) {
+    if (
+        e.key === 'F12' ||
+        (e.ctrlKey && e.shiftKey && ['I','J','C'].includes(e.key)) ||
+        (e.ctrlKey && e.key.toLowerCase() === 'u')
+    ) {
+        e.preventDefault();
+    }
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+<style>
+:root{
+--bg:#090e0b;
+--surface:#111a14;
+--surface2:#17231a;
+--line:#26352a;
+--green:#8be0a5;
+--green2:#39bd6c;
+--white:#f4f8f4;
+--muted:#a0afa3;
+--red:#e4b17c;
+--radius:22px
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+
+body{
+margin:0;
+background:var(--bg);
+color:var(--white);
+font:15px/1.55 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif
+}
+
+button,input,select{font:inherit}
+button{cursor:pointer}
+
+.shell{max-width:1180px;margin:auto;padding:0 24px}
+
+header{
+min-height:550px;
+position:relative;
+overflow:hidden;
+background:radial-gradient(ellipse at 78% 38%,#21452d 0,transparent 34%),linear-gradient(120deg,#080d0a,#101a12 58%,#0a100c);
+border-bottom:1px solid #1b2b20
+}
+
+header:after{
+content:"";
+position:absolute;
+width:550px;
+height:550px;
+border:1px solid #31573b;
+border-radius:50%;
+right:-110px;
+top:15px;
+opacity:.28;
+box-shadow:0 0 0 55px #31573b12,0 0 0 110px #31573b0b
+}
+
+nav{
+height:82px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+position:relative;
+z-index:2
+}
+
+.logo{font-size:18px;letter-spacing:3px;font-weight:950}
+.logo em{font-style:normal;color:var(--green)}
+.navtag{font-size:11px;letter-spacing:2px;color:var(--muted);text-transform:uppercase}
+
+.hero{
+position:relative;
+z-index:1;
+max-width:720px;
+padding:75px 0 110px
+}
+
+.eyebrow{
+color:var(--green);
+font-size:11px;
+letter-spacing:2.5px;
+text-transform:uppercase;
+font-weight:800
+}
+
+.hero h1{
+font-size:clamp(38px,6.5vw,72px);
+line-height:.99;
+letter-spacing:-3px;
+margin:20px 0 22px;
+font-weight:850
+}
+
+.hero h1 span{color:var(--green)}
+
+.hero p{
+max-width:570px;
+color:#c1cec3;
+font-size:17px;
+margin:0 0 30px
+}
+
+.btn{
+border:0;
+border-radius:999px;
+padding:15px 23px;
+font-size:12px;
+letter-spacing:1.2px;
+font-weight:900;
+text-transform:uppercase;
+transition:.2s;
+display:inline-flex;
+align-items:center;
+justify-content:center;
+gap:9px;
+text-decoration:none
+}
+
+.btn-primary{background:var(--green);color:#07120a}
+.btn-primary:hover{background:#b4f1c3;transform:translateY(-2px)}
+.btn-ghost{border:1px solid #49614d;color:var(--white);background:transparent}
+.btn-ghost:hover{border-color:var(--green);color:var(--green)}
+
+main{padding:48px 0 70px}
+
+.intro{
+display:flex;
+align-items:end;
+justify-content:space-between;
+gap:24px;
+margin-bottom:22px
+}
+
+.intro h2{font-size:30px;letter-spacing:-1px;margin:7px 0}
+.intro p{color:var(--muted);margin:0;max-width:600px}
+
+.pill{
+border:1px solid #36533d;
+border-radius:99px;
+color:var(--green);
+padding:7px 12px;
+font-size:10px;
+letter-spacing:1px;
+text-transform:uppercase;
+white-space:nowrap
+}
+
+.layout{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:18px;
+align-items:start
+}
+
+.card{
+background:linear-gradient(145deg,#121c15,#0f1712);
+border:1px solid var(--line);
+border-radius:var(--radius);
+padding:24px;
+box-shadow:0 18px 50px #0002
+}
+
+.card h3{font-size:17px;margin:0 0 5px}
+.hint{font-size:12px;color:var(--muted);margin:0 0 20px}
+
+.section-label{
+display:flex;
+align-items:center;
+gap:9px;
+color:var(--green);
+font-size:10px;
+letter-spacing:1.8px;
+text-transform:uppercase;
+font-weight:850;
+margin:23px 0 13px
+}
+
+.section-label:first-of-type{margin-top:0}
+
+.section-label:before{
+content:"";
+width:7px;
+height:7px;
+border-radius:50%;
+background:var(--green2);
+box-shadow:0 0 12px #39bd6c80
+}
+
+.fields{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:13px
+}
+
+.field.full{grid-column:1/-1}
+
+.field label{
+display:block;
+font-size:11px;
+color:#c8d3ca;
+font-weight:700;
+margin-bottom:6px
+}
+
+.field input,.field select{
+width:100%;
+background:#0a110c;
+color:var(--white);
+border:1px solid #304034;
+border-radius:11px;
+padding:12px 13px;
+outline:none;
+min-width:0
+}
+
+.field input:focus,.field select:focus{
+border-color:var(--green2);
+box-shadow:0 0 0 3px #39bd6c18
+}
+
+.field small{
+display:block;
+color:#829186;
+font-size:10px;
+margin-top:5px
+}
+
+.result-card{
+background:linear-gradient(145deg,#16271b,#101912);
+border-color:#34543b
+}
+
+.result-head{
+display:flex;
+justify-content:space-between;
+align-items:start;
+gap:12px
+}
+
+.result-head .live{
+color:var(--green);
+font-size:10px;
+letter-spacing:1px;
+text-transform:uppercase
+}
+
+.hero-metric{
+padding:20px 0 22px;
+border-bottom:1px solid #314536
+}
+
+.hero-metric span{
+color:#b6c5b9;
+font-size:11px;
+letter-spacing:1px;
+text-transform:uppercase
+}
+
+.hero-metric strong{
+display:block;
+color:var(--green);
+font-size:clamp(38px,5vw,56px);
+letter-spacing:-2px;
+line-height:1.2;
+margin:5px 0
+}
+
+.hero-metric small{color:var(--muted);font-size:11px}
+
+.metric-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:10px;
+margin-top:15px
+}
+
+.metric{
+background:#0c150f;
+border:1px solid #293c2e;
+border-radius:14px;
+padding:15px
+}
+
+.metric span{
+font-size:9px;
+letter-spacing:1px;
+color:#9eafa2;
+text-transform:uppercase;
+display:block
+}
+
+.metric strong{
+font-size:23px;
+display:block;
+margin:5px 0;
+color:var(--white)
+}
+
+.metric small{font-size:10px;color:#91a094}
+
+.full-width{margin-top:18px}
+
+.comparison{
+width:100%;
+border-collapse:collapse;
+min-width:640px
+}
+
+.comparison th,.comparison td{
+padding:13px 12px;
+text-align:right;
+border-bottom:1px solid #29382d;
+font-size:12px
+}
+
+.comparison th{
+font-size:9px;
+letter-spacing:1px;
+color:#9cad9f;
+text-transform:uppercase
+}
+
+.comparison th:first-child,.comparison td:first-child{text-align:left}
+.comparison td:first-child{color:#c9d4cb;font-weight:700}
+.comparison .eco{color:var(--green);font-weight:850}
+.table-scroll{overflow:auto}
+
+.chart-wrap{
+height:300px;
+position:relative;
+margin-top:8px
+}
+
+.chart-wrap canvas{
+width:100%;
+height:100%;
+display:block
+}
+
+.legend{
+display:flex;
+gap:18px;
+flex-wrap:wrap;
+font-size:10px;
+color:#a9b7ac;
+margin-top:12px
+}
+
+.legend i{
+display:inline-block;
+width:8px;
+height:8px;
+border-radius:50%;
+margin-right:6px
+}
+
+.legend .gas{background:#d6a16c}
+.legend .taxi{background:#9b9de3}
+.legend .eko{background:#65d88d}
+
+.callout{
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:24px;
+background:linear-gradient(110deg,#193c25,#102016);
+border:1px solid #386444;
+border-radius:var(--radius);
+padding:28px;
+margin-top:18px
+}
+
+.callout h3{
+font-size:23px;
+line-height:1.15;
+margin:0 0 8px
+}
+
+.callout p{
+color:#c0d0c3;
+font-size:12px;
+margin:0;
+max-width:610px
+}
+
+.callout-actions{display:flex;gap:9px;flex-wrap:wrap}
+
+.fineprint{
+color:#819084;
+font-size:10px;
+line-height:1.6;
+margin:16px 2px 0
+}
+
+.footer{
+border-top:1px solid #1e2d22;
+padding:28px 0 40px;
+color:#819084;
+font-size:11px
+}
+
+.footer strong{color:var(--green);letter-spacing:2px}
+
+@media(max-width:850px){
+.layout{grid-template-columns:1fr}
+.hero{padding:65px 0 95px}
+.intro{align-items:start;flex-direction:column}
+.callout{align-items:flex-start;flex-direction:column}
+}
+
+@media(max-width:540px){
+.shell{padding:0 15px}
+header{min-height:510px}
+.hero h1{letter-spacing:-1.8px}
+.navtag{display:none}
+.card{padding:18px}
+.fields{gap:10px}
+.metric strong{font-size:20px}
+.callout{padding:22px}
+.callout-actions{width:100%}
+.callout-actions .btn{width:100%}
+.chart-wrap{height:250px}
+}
+
+@media print{
+body{background:#fff;color:#111}
+header{min-height:0;background:#fff;color:#111;border:0}
+header:after,nav,.hero .btn,.callout-actions,.btn{display:none!important}
+.hero{padding:15px 0}
+.hero p,.intro p,.hint,.fineprint{color:#333}
+.card{background:#fff;color:#111;box-shadow:none;border:1px solid #bbb;break-inside:avoid}
+.metric{background:#f5f5f5;color:#111}
+.metric strong,.hero-metric strong,.eco{color:#16763b!important}
+.comparison td,.comparison th{color:#111}
+.shell{max-width:none}
+.callout{background:#f1f7f2;color:#111}
+.callout p{color:#333}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="shell">
+
+<nav>
+<div class="logo">⚡ EKO<em>-GREEN</em></div>
+<div class="navtag">Movilidad eléctrica · Quillabamba</div>
+</nav>
+
+<div class="hero">
+<div class="eyebrow">Una decisión inteligente empieza con tus números</div>
+
+<h1>TU PRÓXIMA MOTO PUEDE HACERTE <span>AHORRAR.</span></h1>
+
+<p>Compara lo que gastas hoy en gasolina o mototaxi y descubre cuánto podrías ahorrar con una moto eléctrica EKO-GREEN.</p>
+
+<a class="btn btn-primary" href="#simulador">
+Calcular mi ahorro <span>↗</span>
+</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- BOTÓN PLANIFICADOR DE RUTAS -->
+<button onclick="abrirAcceso()" style="
+    background:#00c853;
+    color:#ffffff;
+    border:none;
+    padding:14px 28px;
+    border-radius:10px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    box-shadow:0 4px 12px rgba(0,200,83,0.25);
+">
+    Planificador de Rutas
+</button>
+
+<!-- VENTANA DE ACCESO -->
+<div id="ventanaAcceso" style="
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.85);
+    z-index:9999;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+">
+    <div style="
+        background:#101a13;
+        border:1px solid #00c853;
+        border-radius:16px;
+        padding:30px 25px;
+        width:100%;
+        max-width:350px;
+        text-align:center;
+        color:white;
+        box-shadow:0 0 25px rgba(0,200,83,0.15);
+    ">
+
+        <h2 style="color:#00c853;margin-top:0;">
+            EKO-GREEN
+        </h2>
+
+        <p>Acceso exclusivo para clientes</p>
+
+        <input
+            type="password"
+            id="claveCliente"
+            placeholder="Ingresa tu clave"
+            style="
+                width:100%;
+                box-sizing:border-box;
+                padding:14px;
+                border-radius:8px;
+                border:1px solid #00c853;
+                background:#17251b;
+                color:white;
+                font-size:15px;
+                outline:none;
+            "
+        >
+
+        <p id="mensajeAcceso" style="
+            color:#ff5555;
+            font-size:13px;
+        "></p>
+
+        <button onclick="verificarClave()" style="
+            width:100%;
+            padding:13px;
+            background:#00c853;
+            color:white;
+            border:none;
+            border-radius:8px;
+            font-weight:bold;
+            cursor:pointer;
+        ">
+            INGRESAR
+        </button>
+
+        <button onclick="cerrarAcceso()" style="
+            margin-top:12px;
+            background:transparent;
+            border:none;
+            color:#aaaaaa;
+            cursor:pointer;
+        ">
+            Cancelar
+        </button>
+
+    </div>
+</div>
+
+<!-- FUNCIONES -->
+<script>
+const CLAVE_CLIENTE = "EKOCLIENTE26"
+
+function abrirAcceso() {
+    document.getElementById("ventanaAcceso").style.display = "flex";
+    document.getElementById("claveCliente").value = "";
+    document.getElementById("mensajeAcceso").textContent = "";
+}
+
+function cerrarAcceso() {
+    document.getElementById("ventanaAcceso").style.display = "none";
+}
+
+function verificarClave() {
+    const clave = document.getElementById("claveCliente").value;
+
+    if (clave === CLAVE_CLIENTE) {
+        window.location.href = "ruta.html";
+    } else {
+        document.getElementById("mensajeAcceso").textContent =
+            "Clave incorrecta. Inténtalo nuevamente.";
+    }
+}
+
+// Permitir ingresar presionando ENTER
+document.getElementById("claveCliente").addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        verificarClave();
+    }
+});
+</script>
+
+
+</div>
+
+</div>
+</header>
+
+<main class="shell" id="simulador">
+
+<div class="intro">
+<div>
+<div class="eyebrow">Simulador de ahorro</div>
+<h2>Tu movilidad, tus números.</h2>
+<p>Personaliza los datos para obtener una comparación estimada y conocer cuánto podrías ahorrar.</p>
+</div>
+<div class="pill">Resultados en tiempo real</div>
+</div>
+
+<div class="layout">
+
+<!-- CONFIGURACIÓN -->
+
+<section class="card">
+
+<h3>Configura tu simulación</h3>
+<p class="hint">Los valores iniciales son referenciales. Puedes editarlos según tu realidad.</p>
+
+
+
+
+
+
+
+<div class="section-label">01 · Tu recorrido</div>
+
+<div class="fields">
+
+<div class="field">
+<label for="km">Kilómetros por día</label>
+<input id="km" type="number" min="0" value="60"readonly>
+</div>
+
+<div class="field">
+<label for="days">Días de uso al mes</label>
+<input id="days" type="number" min="1" max="31" value="31" readonly>
+</div>
+
+</div>
+
+
+
+
+
+
+<div class="section-label">02 · Moto Carga a gasolina</div>
+
+<div class="fields">
+
+<div class="field">
+<label for="gasDaily">Gasolina por día (S/)</label>
+<input id="gasDaily" type="number" min="0" step=".5" value="20"readonly>
+</div>
+
+<div class="field">
+<label for="gasMaint">Mantenimiento mensual (S/)</label>
+<input id="gasMaint" type="number" min="0" value="15"readonly>
+</div>
+
+<div class="field">
+<label for="gasOil">Aceite cada 2 meses (S/)</label>
+<input id="gasOil" type="number" min="0" value="35"readonly>
+</div>
+
+</div>
+
+
+
+
+
+
+<div class="section-label">03 · Mototaxi</div>
+
+<div class="fields">
+
+<div class="field">
+<label for="taxiDaily">Gasto diario en mototaxi (S/)</label>
+<input id="taxiDaily" type="number" min="0" step=".5" value=""readonly>
+</div>
+
+<div class="field">
+<label for="taxiDays">Días de uso al mes</label>
+<input id="taxiDays" type="number" min="1" max="31" value="" readonly>
+</div>
+
+</div>
+
+
+
+
+
+
+<div class="section-label">04 · Moto eléctrica EKO-GREEN</div>
+<div class="fields">
+
+<div class="field">
+<label for="charge">Costo por carga completa (S/)</label>
+<input id="charge" type="number" min="0" step=".1" value="1.20" readonly>
+</div>
+
+<div class="field">
+<label for="range">Autonomía por carga (km)</label>
+<input id="range" type="number" min="1" value="60" readonly>
+</div>
+
+<div class="field">
+<label for="ekoMaint">Mantenimiento mensual (S/)</label>
+<input id="ekoMaint" type="number" min="0" value="20" readonly>
+</div>
+
+</div>
+
+</section>
+
+
+
+
+
+
+
+<!-- RESULTADOS -->
+
+<section class="card result-card" aria-live="polite">
+
+<div class="result-head">
+<div>
+<div class="eyebrow">Tu resultado estimado</div>
+<h3>El valor de tu ahorro.</h3>
+</div>
+<div class="live">● En vivo</div>
+</div>
+
+<div class="hero-metric">
+<span>Ahorro mensual frente a gasolina</span>
+<strong id="saveGas">S/ 0.00</strong>
+<small id="saveGasYear">S/ 0.00 de ahorro anual</small>
+</div>
+
+<div class="metric-grid">
+
+<div class="metric">
+<span>Ahorro mensual vs. mototaxi</span>
+<strong id="saveTaxi">S/ 0.00</strong>
+<small id="saveTaxiYear">Estimado al año</small>
+</div>
+
+<div class="metric">
+<span>Costo mensual EKO-GREEN</span>
+<strong id="ekoMonthly">S/ 0.00</strong>
+<small>Electricidad + mantenimiento</small>
+</div>
+
+<div class="metric">
+<span>Ahorro en 3 años vs. gasolina</span>
+<strong id="save3">S/ 0.00</strong>
+<small>Ahorro acumulado en operación</small>
+</div>
+
+<div class="metric">
+<span>Ahorro en 5 años vs. gasolina</span>
+<strong id="save5">S/ 0.00</strong>
+<small>Ahorro acumulado en operación</small>
+</div>
+
+</div>
+
+</section>
+
+</div>
+
+<!-- TABLA COMPARATIVA -->
+
+<section class="card full-width">
+
+<div class="eyebrow">Análisis comparativo</div>
+
+<h3 style="margin-top:7px">¿Cuánto cuesta cada alternativa?</h3>
+
+<p class="hint">Comparación de los costos estimados de operación mensual y anual.</p>
+
+<div class="table-scroll">
+
+<table class="comparison">
+
+<thead>
+<tr>
+<th>Concepto</th>
+<th>Moto gasolina</th>
+<th>Mototaxi</th>
+<th>EKO-GREEN</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td>Combustible / pasajes / carga</td>
+<td id="tGasFuel">—</td>
+<td id="tTaxiFuel">—</td>
+<td id="tEkoCharge">—</td>
+</tr>
+
+<tr>
+<td>Mantenimiento y otros</td>
+<td id="tGasMaint">—</td>
+<td id="tTaxiMaint">—</td>
+<td id="tEkoMaint">—</td>
+</tr>
+
+<tr>
+<td>Gasto mensual</td>
+<td id="tGasMonth">—</td>
+<td id="tTaxiMonth">—</td>
+<td class="eco" id="tEkoMonth">—</td>
+</tr>
+
+<tr>
+<td>Gasto anual</td>
+<td id="tGasYear">—</td>
+<td id="tTaxiYear">—</td>
+<td class="eco" id="tEkoYear">—</td>
+</tr>
+
+</tbody>
+</table>
+
+</div>
+</section>
+
+<!-- PROYECCIÓN -->
+
+<section class="card full-width">
+
+<div class="eyebrow">Proyección financiera</div>
+
+<h3 style="margin-top:7px">Tu gasto acumulado en el tiempo.</h3>
+
+<p class="hint">Compara la evolución de los gastos de operación de cada alternativa.</p>
+
+<div class="chart-wrap">
+<canvas id="chart" aria-label="Gráfico de gasto acumulado"></canvas>
+</div>
+
+<div class="legend">
+<span><i class="gas"></i>Moto gasolina</span>
+<span><i class="taxi"></i>Mototaxi</span>
+<span><i class="eko"></i>EKO-GREEN</span>
+</div>
+
+<div class="table-scroll" style="margin-top:18px">
+
+<table class="comparison">
+
+<thead>
+<tr>
+<th>Periodo</th>
+<th>Moto gasolina</th>
+<th>Mototaxi</th>
+<th>EKO-GREEN</th>
+<th>Ahorro vs. gasolina</th>
+</tr>
+</thead>
+
+<tbody id="projection"></tbody>
+
+</table>
+
+</div>
+</section>
+
+<!-- CONTACTO -->
+
+<section class="callout">
+
+<div>
+<div class="eyebrow">Da el siguiente paso</div>
+
+<h3>NO SOLO COMPRES UNA MOTO ELÉCTRICA.<br>INVIERTE EN AHORRO.</h3>
+
+<p>Conoce los modelos EKO-GREEN y recibe asesoría para elegir una alternativa que se adapte a tus recorridos y necesidades.</p>
+</div>
+
+<div class="callout-actions">
+
+<a class="btn btn-primary"
+href="https://wa.me/51963058374?text=Hola%20EKO-GREEN%2C%20quiero%20conocer%20los%20modelos%20de%20motos%20el%C3%A9ctricas."
+target="_blank"
+rel="noopener">
+Conocer modelos ↗
+</a>
+
+<button class="btn btn-ghost" id="quote">
+Cotizar por WhatsApp ↗
+</button>
+
+</div>
+</section>
+
+<div class="fineprint">
+Simulación referencial. Los resultados dependen de los datos ingresados por el usuario y no constituyen una garantía de ahorro. La comparación supone que el gasto diario indicado se mantiene durante el periodo analizado. No incluye depreciación, financiamiento, seguros, impuestos ni reparaciones extraordinarias. Verifica el precio, autonomía y costo de carga del modelo específico antes de tomar una decisión.
+</div>
+
+</main>
+
+<footer>
+<div class="shell">
+<strong>EKO-GREEN</strong><br>
+Movilidad eléctrica que impulsa un futuro más verde. · Quillabamba
+</div>
+</footer>
+
+<script>
+
+// CAMPOS DE LA CALCULADORA
+
+const fields=[
+'km',
+'days',
+'gasDaily',
+'gasMaint',
+'gasOil',
+'taxiDaily',
+'taxiDays',
+'charge',
+'range',
+'ekoMaint'
+];
+
+const val=id=>Math.max(0,Number(document.getElementById(id).value)||0);
+
+const fmt=x=>'S/ '+Math.max(0,x).toLocaleString('es-PE',{
+minimumFractionDigits:2,
+maximumFractionDigits:2
+});
+
+const put=(id,s)=>{
+document.getElementById(id).textContent=s;
+};
+
+let latest={};
+
+// CÁLCULO PRINCIPAL
+
+function calculate(){
+
+const km=val('km');
+const days=val('days');
+const range=Math.max(1,val('range'));
+
+// MOTO A GASOLINA
+
+const gasFuel=val('gasDaily')*days;
+const gasMaint=val('gasMaint')+val('gasOil')/2;
+const gasMonth=gasFuel+gasMaint;
+
+// MOTOTAXI
+
+const taxiFuel=val('taxiDaily')*val('taxiDays');
+const taxiMaint=0;
+const taxiMonth=taxiFuel;
+
+// MOTO ELÉCTRICA EKO-GREEN
+
+const ekoFuel=(km*days/range)*val('charge');
+const ekoMaint=val('ekoMaint');
+const ekoMonth=ekoFuel+ekoMaint;
+
+// AHORROS
+
+const saveGas=gasMonth-ekoMonth;
+const saveTaxi=taxiMonth-ekoMonth;
+
+// RESULTADOS PRINCIPALES
+
+put('saveGas',fmt(saveGas));
+
+put(
+'saveGasYear',
+fmt(saveGas*12)+' de ahorro anual frente a gasolina'
+);
+
+put('saveTaxi',fmt(saveTaxi));
+
+put(
+'saveTaxiYear',
+fmt(saveTaxi*12)+' de ahorro anual frente a mototaxi'
+);
+
+put('ekoMonthly',fmt(ekoMonth));
+
+// PROYECCIÓN DE AHORRO
+
+put('save3',fmt(saveGas*36));
+put('save5',fmt(saveGas*60));
+
+// TABLA COMPARATIVA
+
+put('tGasFuel',fmt(gasFuel));
+put('tTaxiFuel',fmt(taxiFuel));
+put('tEkoCharge',fmt(ekoFuel));
+
+put('tGasMaint',fmt(gasMaint));
+put('tTaxiMaint',fmt(taxiMaint));
+put('tEkoMaint',fmt(ekoMaint));
+
+put('tGasMonth',fmt(gasMonth));
+put('tTaxiMonth',fmt(taxiMonth));
+put('tEkoMonth',fmt(ekoMonth));
+
+put('tGasYear',fmt(gasMonth*12));
+put('tTaxiYear',fmt(taxiMonth*12));
+put('tEkoYear',fmt(ekoMonth*12));
+
+// PROYECCIÓN POR AÑOS
+
+const periods=[12,24,36,60];
+
+document.getElementById('projection').innerHTML=periods.map(m=>{
+
+const g=gasMonth*m;
+const t=taxiMonth*m;
+const e=ekoMonth*m;
+
+return `
+<tr>
+<td>${m/12} ${m===12?'año':'años'}</td>
+<td>${fmt(g)}</td>
+<td>${fmt(t)}</td>
+<td class="eco">${fmt(e)}</td>
+<td class="${g-e>=0?'eco':''}">${fmt(g-e)}</td>
+</tr>
+`;
+
+}).join('');
+
+// GUARDAR RESULTADOS
+
+latest={
+saveGas,
+saveTaxi,
+ekoMonth,
+gasMonth,
+taxiMonth
+};
+
+// ACTUALIZAR GRÁFICO
+
+drawChart({
+gasBuy:0,
+gasMonth,
+taxiBuy:0,
+taxiMonth,
+ekoBuy:0,
+ekoMonth
+});
+
+}
+
+// GRÁFICO DE PROYECCIÓN
+
+function drawChart(d){
+
+const canvas=document.getElementById('chart');
+const ctx=canvas.getContext('2d');
+
+const rect=canvas.getBoundingClientRect();
+const ratio=window.devicePixelRatio||1;
+
+canvas.width=rect.width*ratio;
+canvas.height=rect.height*ratio;
+
+ctx.setTransform(ratio,0,0,ratio,0,0);
+
+const w=rect.width;
+const h=rect.height;
+
+const p={
+l:62,
+r:16,
+t:18,
+b:34
+};
+
+const cw=w-p.l-p.r;
+const ch=h-p.t-p.b;
+
+const maxM=60;
+
+const maxV=Math.max(
+d.gasBuy+d.gasMonth*maxM,
+d.taxiBuy+d.taxiMonth*maxM,
+d.ekoBuy+d.ekoMonth*maxM,
+100
+)*1.08;
+
+const x=m=>p.l+cw*m/maxM;
+const y=v=>p.t+ch*(1-v/maxV);
+
+ctx.clearRect(0,0,w,h);
+ctx.font='10px system-ui';
+ctx.lineWidth=1;
+
+// LÍNEAS Y ESCALA
+
+for(let i=0;i<=4;i++){
+
+let v=maxV*i/4;
+let yy=y(v);
+
+ctx.strokeStyle='#29382d';
+ctx.beginPath();
+ctx.moveTo(p.l,yy);
+ctx.lineTo(w-p.r,yy);
+ctx.stroke();
+
+ctx.fillStyle='#9cac9f';
+ctx.textAlign='right';
+
+ctx.fillText(
+v>=1000?'S/'+(v/1000).toFixed(1)+'k':'S/'+Math.round(v),
+p.l-9,
+yy+3
+);
+
+}
+
+// MESES
+
+[0,12,24,36,48,60].forEach(m=>{
+
+ctx.fillStyle='#9cac9f';
+ctx.textAlign='center';
+
+ctx.fillText(
+m===0?'Hoy':m/12+' a',
+x(m),
+h-9
+);
+
+});
+
+// LÍNEAS DEL GRÁFICO
+
+const series=[
+['gasBuy','gasMonth','#d6a16c'],
+['taxiBuy','taxiMonth','#9b9de3'],
+['ekoBuy','ekoMonth','#65d88d']
+];
+
+series.forEach(([buy,monthly,color])=>{
+
+ctx.beginPath();
+
+for(let m=0;m<=maxM;m++){
+
+let xx=x(m);
+let yy=y(d[buy]+d[monthly]*m);
+
+if(m===0){
+ctx.moveTo(xx,yy);
+}else{
+ctx.lineTo(xx,yy);
+}
+
+}
+
+ctx.strokeStyle=color;
+ctx.lineWidth=2.7;
+ctx.stroke();
+
+});
+
+}
+
+// ACTUALIZACIÓN AUTOMÁTICA
+
+fields.forEach(id=>{
+
+document.getElementById(id).addEventListener('input',calculate);
+
+});
+
+// COTIZACIÓN POR WHATSAPP
+
+document.getElementById('quote').addEventListener('click',()=>{
+
+const msg=
+`Hola EKO-GREEN, realicé la simulación de ahorro y quisiera una cotización.
+
+Ahorro mensual vs. gasolina: ${fmt(latest.saveGas)}
+Ahorro mensual vs. mototaxi: ${fmt(latest.saveTaxi)}
+
+¿Me pueden orientar sobre los modelos disponibles?`;
+
+window.open(
+'https://wa.me/51963058374?text='+encodeURIComponent(msg),
+'_blank',
+'noopener'
+);
+
+});
+
+// REDIMENSIONAR GRÁFICO
+
+window.addEventListener('resize',()=>{
+
+drawChart({
+gasBuy:0,
+gasMonth:latest.gasMonth||0,
+taxiBuy:0,
+taxiMonth:latest.taxiMonth||0,
+ekoBuy:0,
+ekoMonth:latest.ekoMonth||0
+});
+
+});
+
+// INICIAR CALCULADORA
+
+calculate();
+
+</script>
+
+</body>
+</html>
